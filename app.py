@@ -19,6 +19,7 @@ from bs4 import BeautifulSoup
 import logging
 import google.generativeai as genai
 from typing import Dict, Any
+import base64
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
@@ -279,12 +280,18 @@ def get_salary_estimate(job_title, location, requirements):
     except Exception as e:
         logger.error(f"Error generating salary estimate: {e}")
         return f"Could not generate salary estimate: {str(e)}"
+    
+
+
+with open("job.png", "rb") as image_file:
+    base64_string = base64.b64encode(image_file.read()).decode()
+    page_icon = f"data:image/png;base64,{base64_string}"
 
 # --- Streamlit UI ---
 st.set_page_config(
-    page_title="Job Hunt Sidekick",
+    page_title="JobQuest",
     layout="wide",
-    page_icon="💼"
+    page_icon=page_icon
 )
 
 # Custom CSS for a professional yet user-friendly aesthetic design with transparent buttons
@@ -471,8 +478,14 @@ background-image: linear-gradient(0deg, #D9AFD9 0%, #97D9E1 100%);
     </style>
     """, unsafe_allow_html=True)
 
-# Main App
-st.title("🧭 CareerCompass AI")
+
+with open("job.png", "rb") as image_file:
+    base64_string = base64.b64encode(image_file.read()).decode()
+    logo = f'<img src="data:image/png;base64,{base64_string}" alt="JobQuest Logo" style="vertical-align:middle; height:60px; margin-right:10px;">'
+
+# Update the title with larger image and text
+st.markdown(f"{logo} <b style='font-size: 2.5em; color: #2c3e50;'>JobQuest AI</b>", unsafe_allow_html=True)
+
 st.subheader("Your Intelligent Job Search Navigator")
 
 # Sidebar
