@@ -1,4 +1,4 @@
-# 🧽 CareerCompass AI
+# JobQuest AI
 
 Your AI-powered job search assistant that helps you find, analyze, and apply for your dream jobs with intelligent automation.
 
