@@ -11,6 +11,11 @@ Your AI-powered job search assistant that helps you find, analyze, and apply for
 - **Match Scoring**: Rates jobs based on your skills and preferences
 
 
+
+https://github.com/user-attachments/assets/95c771d7-a68f-430f-a8a0-956650d94c81
+
+
+
 ## Graph
 ```mermaid
 graph TD
