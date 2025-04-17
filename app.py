@@ -295,188 +295,106 @@ st.set_page_config(
 )
 
 # Custom CSS for a professional yet user-friendly aesthetic design with transparent buttons
+# High Contrast CSS
 st.markdown("""
     <style>
-    /* Background with a subtle gradient */
-    .stApp {
-        background-color: #D9AFD9;
-background-image: linear-gradient(0deg, #D9AFD9 0%, #97D9E1 100%);
-;
-        color: #2c3e50;
-        font-family: 'Helvetica Neue', Arial, sans-serif;
+    /* Base styles */
+    html, body, .stApp {
+        background: #ffffff !important;
+        color: #000000 !important;
+        font-family: Arial, sans-serif;
     }
     
-    /* Sidebar styling */
+    /* Force all text black */
+    h1, h2, h3, h4, h5, h6, p, div, span, label {
+        color: #000000 !important;
+    }
+    
+    /* Sidebar */
     .stSidebar {
-        background: black;
-        border-right: 2px solid #3498db;
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        transition: all 0.3s ease;
-    }
-    .stSidebar:hover {
-        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
-    }
-    
-    /* Header styling */
-    .stTitle {
-        color: #2c3e50;
-        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
-        font-size: 2.8em;
-        font-weight: 700;
-        letter-spacing: 1px;
-        animation: fadeIn 1.5s ease-in-out;
-    }
-    .stSubheader {
-        color: #3498db;
-        font-weight: 600;
-        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05);
-        font-size: 1.5em;
-        animation: slideUp 1s ease-out;
-    }
-    
-    /* Transparent sexy buttons */
-    .stButton>button {
-        background: transparent;
-        border: 2px solid transparent;
-        border-image: linear-gradient(90deg, #3498db, #2980b9) 1;
-        color: #3498db;
-        border-radius: 20px;
-        padding: 12px 28px;
-        font-size: 1.1em;
-        font-weight: 500;
-        transition: all 0.3s ease;
-        box-shadow: 0 3px 10px rgba(52, 152, 219, 0.2);
-        backdrop-filter: blur(5px); /* Subtle glass effect */
-    }
-    .stButton>button:hover {
-        background: rgba(52, 152, 219, 0.1);
-        color: #ffffff;
-        border-color: #2980b9;
-        transform: translateY(-2px);
-        box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
-    }
-    
-    /* Transparent sexy download button */
-    .stDownloadButton>button {
-        background: transparent;
-        border: 2px solid transparent;
-        border-image: linear-gradient(90deg, #e74c3c, #c0392b) 1;
-        color: #e74c3c;
-        border-radius: 20px;
-        padding: 10px 25px;
-        font-size: 1em;
-        transition: all 0.3s ease;
-        box-shadow: 0 3px 10px rgba(231, 76, 60, 0.2);
-        backdrop-filter: blur(5px);
-    }
-    .stDownloadButton>button:hover {
-        background: rgba(231, 76, 60, 0.1);
-        color: #ffffff;
-        border-color: #c0392b;
-        transform: translateY(-2px);
-        box-shadow: 0 5px 15px rgba(231, 76, 60, 0.3);
+        background: #f0f2f6 !important;
+        border-right: 1px solid #d1d5db !important;
     }
     
     /* Input fields */
     .stTextInput>div>div>input, .stTextArea>div>div>textarea {
-        background: #ffffff;
-        border: 2px solid #ecf0f1;
-        border-radius: 10px;
-        color: #2c3e50;
-        padding: 12px;
-        font-size: 1em;
-        transition: border-color 0.3s ease, box-shadow 0.3s ease;
-    }
-    .stTextInput>div>div>input:focus, .stTextArea>div>div>textarea:focus {
-        border-color: #3498db;
-        box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
-        outline: none;
+        background: #ffffff !important;
+        color: #000000 !important;
+        border: 1px solid #d1d5db !important;
     }
     
-    /* Expander and tabs */
-    .stExpander {
-        background: #ffffff;
-        border: 2px solid #ecf0f1;
-        border-radius: 10px;
-        padding: 15px;
-        transition: all 0.3s ease;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    /* Buttons */
+    .stButton>button {
+        background: #2563eb !important;
+        color: white !important;
+        border: none !important;
+        font-weight: bold !important;
     }
-    .stExpander:hover {
-        border-color: #3498db;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    
+    /* Job cards */
+    .job-card {
+        background: #ffffff !important;
+        border: 1px solid #e5e7eb !important;
+        border-radius: 8px;
+        padding: 16px;
+        margin-bottom: 16px;
     }
-    .stTabs [data-baseweb="tab-list"] {
-        background: #ffffff;
-        border-bottom: 2px solid #ecf0f1;
+    
+    .job-title {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 4px;
     }
+    
+    .company-name {
+        color: #2563eb !important;
+        font-weight: bold;
+        margin-bottom: 4px;
+    }
+    
+    .job-summary {
+        color: #4b5563 !important;
+        margin-bottom: 8px;
+    }
+    
+    .match-badge {
+        background: #10b981 !important;
+        color: white !important;
+        padding: 4px 8px;
+        border-radius: 12px;
+        font-size: 12px;
+        font-weight: bold;
+        display: inline-block;
+        margin-right: 8px;
+    }
+    
+    .view-job-btn {
+        background: transparent !important;
+        color: #2563eb !important;
+        border: 1px solid #2563eb !important;
+        padding: 4px 12px !important;
+        font-size: 14px !important;
+        border-radius: 4px !important;
+    }
+    
+    /* Tabs */
     .stTabs [data-baseweb="tab"] {
-        background: #ffffff;
-        color: #7f8c8d;
-        border: none;
-        border-radius: 8px 8px 0 0;
-        padding: 10px 20px;
-        margin: 0 5px;
-        transition: all 0.3s ease;
-        font-weight: 500;
+        color: #000000 !important;
+        font-weight: bold !important;
     }
-    .stTabs [data-baseweb="tab"]:hover {
-        color: #3498db;
-        background: #f9fbfd;
-    }
+    
     .stTabs [data-baseweb="tab"][aria-selected="true"] {
-        color: #2c3e50;
-        background: #3498db;
-        border-bottom: 2px solid #2980b9;
-        font-weight: 600;
+        background: #2563eb !important;
+        color: white !important;
     }
     
-    /* Text area and download button */
-    .stTextArea>div>div>textarea {
-        background: #ffffff;
-        border-radius: 10px;
-        border: 2px solid #ecf0f1;
-    }
-    
-    /* Animations */
-    @keyframes fadeIn {
-        from { opacity: 0; }
-        to { opacity: 1; }
-    }
-    @keyframes slideUp {
-        from { transform: translateY(20px); opacity: 0; }
-        to { transform: translateY(0); opacity: 1; }
-    }
-    
-    /* Success and error messages */
-    .stSuccess {
-    background: #2ecc71;
-    padding: 12px;
-    border-radius: 10px;
-    animation: fadeIn 1s ease-in-out;
-    box-shadow: 0 2px 6px rgba(46, 204, 113, 0.3);
-}
-.stSuccess p, .stSuccess span, .stSuccess div {
-    color: #000000 !important; /* Forcefully set text color to black */
-}
-.stError {
-    background: #e74c3c;
-    color: white;
-    padding: 12px;
-    border-radius: 10px;
-    animation: fadeIn 1s ease-in-out;
-    box-shadow: 0 2px 6px rgba(231, 76, 60, 0.3);
-}
-    
-    /* Spinner */
-    .stSpinner > div {
-        border-top-color: #3498db !important;
-        border-left-color: #3498db !important;
+    /* Success message */
+    .stAlert.st-success {
+        background: #d1fae5 !important;
+        border-left: 4px solid #10b981 !important;
     }
     </style>
-    """, unsafe_allow_html=True)
+""", unsafe_allow_html=True)
 
 
 with open("job.png", "rb") as image_file:
@@ -581,6 +499,17 @@ if st.session_state.jobs:
                 
                 if st.session_state.selected_job == job and st.session_state.salary_estimate:
                     st.write(st.session_state.salary_estimate)
+
+
+# Empty State
+else:
+    st.markdown("""
+        <div style="text-align: center; padding: 40px 0; color: #4b5563;">
+            <h3>Ready to find your dream job?</h3>
+            <p>Fill out your profile and click "Find Matching Jobs" to get started</p>
+        </div>
+    """, unsafe_allow_html=True)
+
 
 # Reset
 if st.button("🔄 Reset Search"):
